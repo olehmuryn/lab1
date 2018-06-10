@@ -1,0 +1,41 @@
+﻿
+<head>
+    <script type="text/javascript">
+     function validate()
+        {
+         if (document.getElementById("txtFirstNumber").value == "" || document.getElementById("txtLastNumber").value == "")
+            {
+                alert("Заповніть усі поля!");
+         }
+         if (isNaN(document.getElementById("txtFirstNumber").value) || isNaN(document.getElementById("txtFirstNumber").value))
+         {
+             alert("Введіть числа");
+         }
+        }
+    </script>
+   </head>
+<div align="center">  
+    <h2>Калькулятор</h2> 
+    @using (Html.BeginForm("Index","Home", FormMethod.Post))
+    {  
+    <table>  
+        <tr>  
+            <th> Введіть число А </th>  
+            <td> <input type="text" id="txtFirstNumber" name="firstNumber" class="form-control" /> </td>  
+        </tr>  
+        <tr>  
+            <th> Введіть число Б </th>  
+            <td> <input type="text" id="txtLastNumber" name="secondNumber" class="form-control" /> </td>  
+        </tr>  
+        <tr>  
+            <th><input type="submit" onclick="validate()" name="Cal" value="Add" class="btn btn-primary" />  <input type="submit" name="Cal" onclick="validate()" value="Sub" class="btn btn-primary" /> </th>  
+            <th><input type="submit" onclick="validate()" name="Cal" value="Mul" class="btn btn-primary" />   <input type="submit" name="Cal" onclick="validate()" value="Div" class="btn btn-primary" /> </th>  
+        </tr>  
+        <tr>  
+            <th>Результат</th>  
+            <td><input type="text" class="form-control" value="@ViewBag.Result" /> </td>  
+        </tr>  
+    </table> 
+    } 
+
+</div>  
