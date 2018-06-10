@@ -9,7 +9,7 @@ namespace MyFirstMVCApplication.Controllers
 {
     public class HomeController : Controller
     {
-        //coment 
+        //coment j
         [HttpGet]
         public ActionResult Index()
         {
